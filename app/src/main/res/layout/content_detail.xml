@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".view.DetailActivity"
+    tools:showIn="@layout/activity_detail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/dtl_judul"
+            android:layout_height="wrap_content"
+            android:text="judul"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/dtl_desk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="@string/dummy" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:id="@+id/ic_dtl_htm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_attach_money_black_24dp" />
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:id="@+id/ic_dtl_lok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ic_dtl_htm"
+                android:layout_marginVertical="10dp"
+                android:src="@drawable/ic_location_on_black_24dp" />
+
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:id="@+id/ic_dtl_kontak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dtl_lok"
+                android:src="@drawable/ic_perm_contact_calendar_black_24dp" />
+
+
+            <TextView
+                android:layout_toRightOf="@id/ic_dtl_htm"
+                android:id="@+id/dtl_htm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="htm" />
+
+            <TextView
+                android:layout_toRightOf="@id/ic_dtl_lok"
+                android:id="@+id/dtl_lok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dtl_htm"
+                android:layout_marginVertical="10dp"
+                android:text="lokasi" />
+
+            <TextView
+                android:layout_toRightOf="@id/ic_dtl_kontak"
+                android:id="@+id/dtl_kontak"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dtl_lok"
+                android:text="kontak" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
