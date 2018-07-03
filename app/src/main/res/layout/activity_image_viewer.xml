@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".view.ImageViewer">
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tv_sample_nama"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/country_side_two"
+        android:textSize="50sp"
+        android:text="Pantai Sample"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <ImageView
+        android:src="@drawable/bg_head"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/img_detail"
       />
 
-</RelativeLayout>
+
+
+</LinearLayout>

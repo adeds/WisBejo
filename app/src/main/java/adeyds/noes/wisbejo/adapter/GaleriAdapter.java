@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -21,6 +22,7 @@ import adeyds.noes.wisbejo.model.Pantai;
 import adeyds.noes.wisbejo.view.ImageViewer;
 
 import static adeyds.noes.wisbejo.util.AppVar.PATH_IMAGE_GALERI;
+import static adeyds.noes.wisbejo.view.ImageViewer.NAMA_IMAGE_DETAIL;
 import static adeyds.noes.wisbejo.view.ImageViewer.PATH_IMAGE_DETAIL;
 
 public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.HolderGaleri> {
@@ -48,6 +50,8 @@ public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.HolderGale
     public void onBindViewHolder(@NonNull HolderGaleri holder, int position) {
         Galeri galeri = getItem(position);
         final String galeriPath = galeri.getPath();
+        final String galeriNama = galeri.getNama();
+
         Glide.with(context)
                 .load(PATH_IMAGE_GALERI+galeriPath)
                 .apply(new RequestOptions()
@@ -58,8 +62,11 @@ public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.HolderGale
         holder.imgGaleri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context, ImageViewer.class);
                 intent.putExtra(PATH_IMAGE_DETAIL,PATH_IMAGE_GALERI+galeriPath);
+                intent.putExtra(NAMA_IMAGE_DETAIL,galeriNama);
+
                 context.startActivity(intent);
             }
         });

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_beach"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.About">
+
+    <LinearLayout
+    android:layout_centerInParent="true"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_margin="30dp"
+    android:background="@drawable/bg_trans"
+    android:layout_width="match_parent"
+    android:padding="30dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:fontFamily="@font/country_side"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:text="Aplikasi Kami"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/country_side_two"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Digunakan untuk memasarkan wisata pantai yang ada di Jogjakarta dengan mudah dan cepat"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</RelativeLayout>

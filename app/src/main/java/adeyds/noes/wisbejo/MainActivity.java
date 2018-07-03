@@ -1,13 +1,17 @@
 package adeyds.noes.wisbejo;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.Log;
+import android.view.SubMenu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,6 +29,7 @@ import adeyds.noes.wisbejo.fragment.AccountFragment;
 import adeyds.noes.wisbejo.fragment.GaleriFragment;
 import adeyds.noes.wisbejo.fragment.HomeFragment;
 import adeyds.noes.wisbejo.fragment.InfoFragment;
+import adeyds.noes.wisbejo.util.CustomTypefaceSpan;
 
 import static adeyds.noes.wisbejo.util.AppVar.FROM_GALER;
 import static adeyds.noes.wisbejo.util.AppVar.GALER_EXTRA;
@@ -60,6 +65,22 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu m = navigationView.getMenu();
+        for (int i=0;i<m.size();i++) {
+            MenuItem mi = m.getItem(i);
+
+            //for aapplying a font to subMenu ...
+            SubMenu subMenu = mi.getSubMenu();
+            if (subMenu!=null && subMenu.size() >0 ) {
+                for (int j=0; j <subMenu.size();j++) {
+                    MenuItem subMenuItem = subMenu.getItem(j);
+                    applyFontToMenuItem(subMenuItem);
+                }
+            }
+
+            //the method we have create in activity
+            applyFontToMenuItem(mi);
+        }
         navigationView.setNavigationItemSelectedListener(this);
 
         fragment = null;
@@ -101,13 +122,13 @@ public class MainActivity extends AppCompatActivity
 
         }
     }
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
+    private void applyFontToMenuItem(MenuItem mi) {
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/specific.ttf");
+        SpannableString mNewTitle = new SpannableString(mi.getTitle());
+        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+        //mNewTitle.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER), 0, mNewTitle.length(), 0); Use this if you want to center the items
+        mi.setTitle(mNewTitle);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -17,6 +17,7 @@
         android:padding="20dp">
 
         <TextView
+            android:fontFamily="@font/country_side"
             android:layout_width="match_parent"
             android:id="@+id/dtl_judul"
             android:layout_height="wrap_content"
@@ -24,6 +25,7 @@
             android:textSize="30dp" />
 
         <TextView
+            android:fontFamily="@font/specific"
             android:id="@+id/dtl_desk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,6 +62,7 @@
 
 
             <TextView
+
                 android:layout_toRightOf="@id/ic_dtl_htm"
                 android:id="@+id/dtl_htm"
                 android:layout_width="match_parent"
@@ -67,8 +70,10 @@
                 android:text="htm" />
 
             <TextView
+                android:fontFamily="@font/specific"
                 android:layout_toRightOf="@id/ic_dtl_lok"
                 android:id="@+id/dtl_lok"
+                android:textSize="10sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dtl_htm"
@@ -76,6 +81,7 @@
                 android:text="lokasi" />
 
             <TextView
+
                 android:layout_toRightOf="@id/ic_dtl_kontak"
                 android:id="@+id/dtl_kontak"
                 android:clickable="true"

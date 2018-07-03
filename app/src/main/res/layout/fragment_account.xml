@@ -34,6 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
+                android:fontFamily="@font/country_side"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                android:id="@+id/tv_keterangan"
@@ -41,6 +42,7 @@
                 android:text="@string/click_here_to_login" />
 
             <EditText
+                android:fontFamily="@font/country_side"
                 android:text="here"
                 android:id="@+id/edt_login"
                 android:layout_width="match_parent"
@@ -65,18 +67,22 @@
             android:padding="20dp">
 
             <TextView
+                android:fontFamily="@font/country_side_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/kritik_saran" />
 
             <EditText
+                android:fontFamily="@font/country_side"
                 android:id="@+id/edt_kritsar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="20dp" />
 
             <Button
+                android:textAllCaps="false"
                 android:id="@+id/btn_submit_kritsar"
+                android:fontFamily="@font/country_side_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_shape_primary"

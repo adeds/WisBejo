@@ -281,7 +281,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         AndroidNetworking.post("http://" + ADDRESS_LOC + "/PHP/Pantai_API/procedural/feedback.php")
                 .addBodyParameter("email", edtLogin.getText().toString())
                 .addBodyParameter("pesan", edtKritSar.getText().toString())
-                .addBodyParameter("tanggal", tanggal)
+                .addBodyParameter("tan ggal", tanggal)
                 .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
